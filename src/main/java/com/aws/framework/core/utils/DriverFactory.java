@@ -20,7 +20,7 @@ public class DriverFactory {
 
     private static final Map<DriverType, Supplier<WebDriver>> driverMap = new HashMap<>();
     private static DesiredCapabilities caps;
-    private static WebDriver driver;
+    //private static WebDriver driver;
 
     //chrome driver supplier
     private static final Supplier<WebDriver> chromeDriverSupplier = () -> {
@@ -30,6 +30,7 @@ public class DriverFactory {
 
     //android driver supplier
     private static final Supplier<WebDriver> androidDriverSupplier = () -> {
+        AppiumDriver driver = null;
         File app = new File( "src/test/resources/AWSConsole.apk");
         caps = new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 2 API 27");
