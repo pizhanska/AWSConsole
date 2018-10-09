@@ -16,5 +16,5 @@ buildNumber.properties
 log
 test-output
 target
-.log
-.exe
+*.log
+*.exe
