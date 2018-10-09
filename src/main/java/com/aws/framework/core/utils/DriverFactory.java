@@ -30,7 +30,7 @@ public class DriverFactory {
 
     //android driver supplier
     private static final Supplier<WebDriver> androidDriverSupplier = () -> {
-        File app = new File( "src/test/resources/LivingTree.apk");
+        File app = new File( "src/test/resources/AWSConsole.apk");
         caps = new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 2 API 27");
         caps.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
