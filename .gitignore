@@ -19,3 +19,10 @@ target
 *.log
 *.exe
 !node.exe
+
+# Resource files
+chromedriver.exe
+AWSConsole.apk
+
+# Allure
+.allure
