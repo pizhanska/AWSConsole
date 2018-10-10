@@ -4,12 +4,12 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
-
 public class LoginPage extends BasePage {
-    @FindBy(xpath = "//*[@id='m-nav']/div[1]/div[2]/a[4]/i")
+
+    @FindBy(xpath = "(//*[@class='icon-caret-down lb-trigger-mount'])[2]")
     private RemoteWebElement dropDownMenu;
 
-    @FindAll({@FindBy(id = "ROOT Root Account"), @FindBy(xpath = "/html/body/div[27]/ul/li[1]/a")})
+    @FindAll({@FindBy(id = "ROOT Root Account"), @FindBy(xpath = "//div[27]/ul/li[1]/a")})
     private RemoteWebElement loginWRootAccountBtn;
 
     @FindBy(id="resolving_input")
