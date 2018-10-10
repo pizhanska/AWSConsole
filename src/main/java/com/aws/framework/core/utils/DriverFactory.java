@@ -47,7 +47,6 @@ public class DriverFactory {
         return driver;
     };
 
-
     static{
         driverMap.put(DriverType.CHROME, chromeDriverSupplier);
         driverMap.put(DriverType.ANDROID,androidDriverSupplier);
