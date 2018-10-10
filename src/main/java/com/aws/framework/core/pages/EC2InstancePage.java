@@ -26,11 +26,17 @@ public class EC2InstancePage extends BasePage {
     @FindBy(xpath = "//div[@class='awsui-alert-header awsui-text-big']")
     private RemoteWebElement alertLaunchedInstances;
 
+    @FindBy(xpath = "//span[@text='The following instance launches have been initiated: ']/a")
+    private RemoteWebElement getInstanceID;
+
     @FindBy(xpath = "//span[@text='View Instances']")
     private RemoteWebElement btnViewInstances;
 
     @FindBy(css = "#gwt-debug-gridTable > div:nth-child(3) > div > div:nth-child(2) > div > div > table > tbody > tr.GNAEPMSDIHB.GNAEPMSDMIB > td:nth-child(12) > div")
     private RemoteWebElement launchedInstance;
+
+    @FindBy(id = "detailsInstanceState")
+    private RemoteWebElement instanceState;
 
     public void typeSearchAMI(String AMIname){
         searchAMI.sendKeys(AMIname);
@@ -65,6 +71,14 @@ public class EC2InstancePage extends BasePage {
 
     public void clickOnLaunchedInstance(){
         launchedInstance.click();
+    }
+
+    public String getInstanceState(){
+        return instanceState.getText();
+    }
+
+    public String getInstanceId(){
+        return getInstanceID.getText();
     }
 
 }
