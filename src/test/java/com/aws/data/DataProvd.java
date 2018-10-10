@@ -15,7 +15,7 @@ public class DataProvd {
 
     @DataProvider(name = "testData")
     public static Object[][] invalidLogin() {
-        return readData("src/main/resources/TestData.csv");
+        return readData("src/test/resources/TestData.csv");
     }
 
 
