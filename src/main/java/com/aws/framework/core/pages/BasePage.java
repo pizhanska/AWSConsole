@@ -14,19 +14,22 @@ import java.util.HashMap;
 
 public class BasePage {
 
-    protected Wait<WebDriver> wait;
+    protected WebDriverWait wait;
     protected JavascriptExecutor js;
 
     //Waits
-    public void waitElementToBeClicked(RemoteWebElement webElement) {
+    public void waitElementToBeClicked(DriverFactory.DriverType type, RemoteWebElement webElement, int sec) {
+        wait = new WebDriverWait(DriverFactory.getDriver(type), sec);
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
-    public void waitElementToBeSelected(RemoteWebElement webElement) {
+    public void waitElementToBeSelected(DriverFactory.DriverType type,RemoteWebElement webElement, int sec) {
+        wait = new WebDriverWait(DriverFactory.getDriver(type), sec);
         wait.until(ExpectedConditions.elementToBeSelected(webElement));
     }
 
-    public void waitElementToBeVisible(RemoteWebElement webElement) {
+    public void waitElementToBeVisible(DriverFactory.DriverType type,RemoteWebElement webElement, int sec) {
+        wait = new WebDriverWait(DriverFactory.getDriver(type), sec);
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
@@ -36,7 +39,7 @@ public class BasePage {
     }
 
     public void waitForPageLoad(DriverFactory.DriverType type, int sec) {
-        new WebDriverWait(DriverFactory.getDriver(type), 60).until((ExpectedCondition<Boolean>) wd ->
+        new WebDriverWait(DriverFactory.getDriver(type), sec).until((ExpectedCondition<Boolean>) wd ->
                 ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
     }
 
