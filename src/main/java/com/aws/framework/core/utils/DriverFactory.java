@@ -1,7 +1,6 @@
 package com.aws.framework.core.utils;
 
 
-import com.aws.framework.core.pages.LoginPage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
