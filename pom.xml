@@ -10,6 +10,7 @@
 
     <properties>
         <aspectj.version>1.8.10</aspectj.version>
+        <allure.version>2.7.0</allure.version>
         <allurePlugin.version>2.9</allurePlugin.version>
         <surefirePlugin.version>2.20</surefirePlugin.version>
         <allureTestNG.version>2.6.0</allureTestNG.version>
@@ -35,6 +36,7 @@
                 <version>${allurePlugin.version}</version>
                 <configuration>
                     <reportDirectory>target/allure-report</reportDirectory>
+                    <reportVersion>${allure.version}</reportVersion>
                 </configuration>
             </plugin>
             <plugin>

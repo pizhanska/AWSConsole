@@ -18,4 +18,12 @@ test-output
 target
 *.log
 *.exe
+*.apk
+!node.exe
 
+# Resource files
+chromedriver.exe
+AWSConsole.apk
+
+# Allure
+.allure
