@@ -1,9 +1,23 @@
 package com.aws.framework.core.pages;
 
+import com.aws.framework.core.utils.DriverFactory;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class EC2InstancePage extends BasePage {
+
+    public EC2InstancePage(DriverFactory.DriverType type){
+        switch (type){
+            case CHROME:
+                PageFactory.initElements(DriverFactory.getInstance().getDriver(), this);
+                break;
+            case ANDROID:
+                PageFactory.initElements(new AppiumFieldDecorator(DriverFactory.getInstance().getDriver()), this);
+                break;
+        }
+    }
 
     @FindBy(id = "gwt-debug-searchTextBox")
     private RemoteWebElement searchAMI;
