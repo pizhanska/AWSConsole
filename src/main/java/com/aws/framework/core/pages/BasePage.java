@@ -38,7 +38,7 @@ public class BasePage {
 
 
     //Waits
-    public void waitElementToBeClicked(WebElement webElement, int sec) {
+    public void waitElementToBeClickable(WebElement webElement, int sec) {
         wait = new WebDriverWait(DriverFactory.getInstance().getDriver(), sec);
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
     }

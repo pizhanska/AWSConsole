@@ -27,10 +27,10 @@ public class LoginPage extends BasePage {
     @FindAll({@FindBy(xpath = "//android.view.View[@content-desc='ROOT Root Account']"), @FindBy(xpath = "//div[27]/ul/li[1]/a")})
     private WebElement loginWRootAccountBtn;
 
-    @FindBy(id="resolving_input")
+    @FindAll({@FindBy(id="resolving_input"), @FindBy(xpath = "//android.webkit.WebView[@content-desc=\"Amazon Web Services Sign-In\"]/android.view.View[9]/android.widget.EditText")})
     private WebElement emailAddressField;
 
-    @FindBy(id = "next_button")
+    @FindAll({@FindBy(id = "next_button"), @FindBy(xpath = "//android.widget.Button[@content-desc='Next']")})
     private WebElement nextBtn;
 
     @FindBy(id = "password")
@@ -40,19 +40,17 @@ public class LoginPage extends BasePage {
     private WebElement signInBtn;
 
     public void clickDropDownMenu() {
-        waitElementToBeClicked(dropDownMenu, 5);
+        waitElementToBeClickable(dropDownMenu, 5);
         dropDownMenu.click();
     }
 
     public void clickLogonWRootAccountBtn() {
-        waitElementToBeClicked(loginWRootAccountBtn, 6);
+        waitElementToBeClickable(loginWRootAccountBtn, 6);
         loginWRootAccountBtn.click();
-
-
     }
 
     public void fillEmailAddressField(String emailAddress) {
-        waitElementToBeClicked(emailAddressField, 5);
+        waitElementToBeClickable(emailAddressField, 5);
         emailAddressField.sendKeys(emailAddress);
     }
 
@@ -61,7 +59,7 @@ public class LoginPage extends BasePage {
     }
 
     public void fillPasswordField(String password) {
-        waitElementToBeClicked(passwordField,5);
+        waitElementToBeClickable(passwordField,5);
         passwordField.sendKeys(password);
     }
 
